@@ -1,0 +1,68 @@
+<!--
+For testing purposes, here we are creating a client app that is completely independent of 
+our web server that is running on Heroku. This app can be double clicked and run off 
+of the desktop.
+
+DO NOT do this for Project 1!
+
+Instead, create client.html in the client folder as we did in the HW assignments, and have
+node "serve it up", along with any other CSS or JS files.
+
+This also guarantees that your client and server are both "awake" on Heroku at the same time.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Simple Client</title>
+	<style>
+		button{font-size:1.3em;}
+		section{margin:2em 0;}
+	</style>
+	<script>
+		window.onload = () =>{
+            btnRandomJoke.onclick = () =>{
+                let path = "https://sgm4689-server-week6.herokuapp.com/getRandomJokes";
+                const xhr = new XMLHttpRequest();
+                xhr.onerror = (e) =>{
+                    console.log(e);
+                }
+                xhr.ontimeout = (e) =>{
+                    console.log(e);
+                }
+                xhr.onload = (e) =>{
+                    console.log(e);
+                }
+                xhr.open('GET',path);
+                //header
+                xhr.send();
+            };
+        };
+	</script>
+</head>
+<body>
+<h1>Joke Getter</h1>
+<section>
+	<button id="btnRandomJoke">Get Random Joke</button>
+	<button id="btnGetAllJokes">Get All Jokes</button>
+</section>
+<hr>
+<section>
+	<input type="text" placeholder = "Setup"> 
+	<input type="text" placeholder = "Punchline"> 
+	<button id="btnSubmitJoke">Submit Joke</button>
+</section>
+
+<hr>
+
+<h2>Random Joke</h2>
+<section id="randomJoke"></section>
+
+<hr>
+
+<h2>All Jokes</h2>
+<section id="allJokes"></section>
+
+</body>
+</html>

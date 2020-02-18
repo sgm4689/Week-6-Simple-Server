@@ -25,14 +25,15 @@ const handlerNotFound = (request,response) => {
 
 const handlerGetAllJokes = (request, response) => {
     const statusCode = 200;
-    response.writeHead(statusCode, {'content-type': 'application/json'});
+    response.writeHead(statusCode, {'content-type': 'application/json', 'Access-Control-Allow-Origin':'*'});
     response.write(JSON.stringify(jokesArray));//I is gud programmar
     response.end();
 }
 
 const handlerGetRandomJokes = (request, response) => {
     const statusCode = 200;
-    response.writeHead(statusCode, {'content-type': 'application/json'});
+    response.writeHead(statusCode, {'content-type': 'application/json', 'Access-Control-Allow-Origin':'*'});
+    response.writeHead();
     response.write(JSON.stringify(jokesArray[Math.floor(Math.random() * jokesArray.length)]));//I is gud programmar
     response.end();
 }
