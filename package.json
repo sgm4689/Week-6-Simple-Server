@@ -1,0 +1,21 @@
+{
+  "name": "week-6-simple-server",
+  "version": "1.0.0",
+  "description": "Week 6 server from scratch",
+  "main": "simple-server.js",
+  "scripts": {
+    "start": "node ./simple-server.js",
+    "test": "eslint ./src --fix",
+    "posttest": "echo \"Tests complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgm4689/Week-6-Simple-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgm4689/Week-6-Simple-Server/issues"
+  },
+  "homepage": "https://github.com/sgm4689/Week-6-Simple-Server#readme"
+}
